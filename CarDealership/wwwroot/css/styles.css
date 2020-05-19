@@ -19,3 +19,16 @@
   border-color: rgba(255,255,255,1);
   transform: scale(1.1);
 }
+body{
+  background-color: green;
+  background: linear-gradient(rgb(0, 139, 53), rgb(240, 255, 100), rgba(107, 33, 107, 0.753));
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  display: block;
+  padding: 1%;
+  min-height: 100%;
+  background-attachment: fixed;
+  margin: 0;
+  text-align: center;
+}

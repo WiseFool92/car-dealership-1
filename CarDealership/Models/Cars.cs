@@ -10,8 +10,11 @@ namespace CarDealership.Models
     public string Miles { get; set; }
     public string Price { get; set; }
     
-    private static Dictionary<string, List<string>> _carDictionary  = new Dictionary<string, List<string>> {};
-    private static List<string> _carProperties = new List<string>();
+    public static List<Dictionary<string, string>> CarList  = new List<Dictionary<string, string>> {};
+    // public static Dictionary<string, string> TestCar = new Dictionary<string, string>() { {makeModel, "Volkswagen Thing"}, {year, "1974"}, {color, "Seafoam Green"}, {miles, "368792"}, {price, "1100"}};
+
+    public Dictionary<string, string> CarInfo = new Dictionary<string, string>() {} ;
+
     public Cars(string year, string makeModel, string color, string miles, string price)
     {
       Year = year;
@@ -19,12 +22,12 @@ namespace CarDealership.Models
       Color = color;
       Miles = miles;
       Price = price;
-      _carProperties.Add(Year);
-      _carProperties.Add(MakeModel);
-      _carProperties.Add(Color);
-      _carProperties.Add(Miles);
-      _carProperties.Add(Price);
-      _carDictionary.Add(Year + " " + MakeModel, _carProperties);
+      CarInfo.Add("Year: ", year);
+      CarInfo.Add("MakeModel: ", makeModel);
+      CarInfo.Add("Color: ", color);
+      CarInfo.Add("Miles: ", miles);
+      CarInfo.Add("Price: ", price);
+      CarList.Add(CarInfo);
     }
     // public static Dictionary<string, List<string>> GetAll()
     // {
@@ -48,5 +51,23 @@ namespace CarDealership.Models
     //   { 8, new List<string> {"j", "x"} },
     //   { 10, new List<string> {"q", "z"} }  
     // };
+
+    // public void GetValue()
+    // {
+    //   foreach (KeyValuePair<int, List<string>> list in tileValue)
+    //   {
+    //     foreach (string value in list.Value)
+    //     {
+    //       Console.WriteLine("Key = {0}, Value = {1}", list.Key, value);
+          // psuedo code - writing out the next logic steps
+          // if(value.Contains(Input))
+          // {
+          //   designate dictionary[list] containing input;
+          //   totalScore += list Key;
+          // }
+      //   }
+      // }
+        // Console.WriteLine(totalScore);
+    // }
   }
 }
