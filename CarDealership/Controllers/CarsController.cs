@@ -7,12 +7,12 @@ namespace CarDealership.Controllers
   public class CarsController : Controller
   {
 
-    [HttpGet("/cars")]
-    public ActionResult Index()
-    {
-      List<Car> allCars = Car.GetAll();
-      return View(allCars);
-    }
+    // [HttpGet("/cars")]
+    // public ActionResult Index()
+    // {
+    //   List<Cars> allCars = Cars.GetAll();
+    //   return View(allCars);
+    // }
 
     [HttpGet("/cars/new")]
     public ActionResult CreateForm()
@@ -21,9 +21,9 @@ namespace CarDealership.Controllers
     }
 
     [HttpPost("/cars")]
-    public ActionResult Create(int year, string make, string model, string color, int miles, int price)
+    public ActionResult Create(string year, string makeModel, string color, string miles, string price)
     {
-      Car myCar = new Car(year, make, model, color, miles, price);
+      Cars newCar = new Cars(year, makeModel, color, miles, price);
       return RedirectToAction("Index");
     }
   }

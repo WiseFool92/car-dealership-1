@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace MadLibs
+namespace CarDealership
 {
   public class Program
   {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+@using CarDealership.Models;
     <title>C# Car Dealership</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
@@ -8,6 +9,19 @@
   <body>
   <div class="gr">
     <h2 >Car Dealership</h2>
+    @if (Model.Count == 0)
+    {
+      <p>There are currently no cars available.</p>
+    }
+    @foreach (Cars newCar in Model)
+    {
+    <ul>@newCar.MakeModel
+      <li>@newCar.Year</li>
+      <li>@newCar.Color</li>
+      <li>@newCar.Miles</li>
+      <li>@newCar.Price</li>
+    </ul>
+    }
   </div>
   <a href="/cars/new"><button id="btnLocation">Add A Car To Sell!</button></a>
   </body>
